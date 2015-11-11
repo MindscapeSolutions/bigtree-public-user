@@ -1,0 +1,262 @@
+{
+    "type": "extension",
+    "id": "com.mindscapesolutions.public-user",
+    "version": "1.0",
+    "revision": 3,
+    "compatibility": "4.2+",
+    "title": "Public User",
+    "description": "Support for public user accounts.",
+    "keywords": [
+        "public",
+        "user",
+        "account"
+    ],
+    "author": {
+        "name": "MINDSCAPE Solutions",
+        "url": "http://mindscapesolutions.com",
+        "email": "programmers@mindscapesolutions.com"
+    },
+    "licenses": {
+        "MIT": "http://opensource.org/licenses/MIT"
+    },
+    "components": {
+        "module_groups": [
+            {
+                "id": "1",
+                "name": "Users",
+                "route": "users",
+                "position": "0",
+                "extension": null
+            }
+        ],
+        "modules": [
+            {
+                "id": "3",
+                "group": "1",
+                "name": "Public User",
+                "route": "com.mindscapesolutions.public-user*public-user",
+                "class": "PublicUser",
+                "icon": "user",
+                "gbp": {
+                    "name": "",
+                    "table": "",
+                    "other_table": ""
+                },
+                "position": "0",
+                "extension": "com.mindscapesolutions.public-user",
+                "actions": [
+                    {
+                        "id": "7",
+                        "module": "3",
+                        "name": "View Public User",
+                        "route": "",
+                        "in_nav": "on",
+                        "form": null,
+                        "view": "3",
+                        "report": null,
+                        "class": "list",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "8",
+                        "module": "3",
+                        "name": "Add Public User",
+                        "route": "add",
+                        "in_nav": "on",
+                        "form": "3",
+                        "view": null,
+                        "report": null,
+                        "class": "add",
+                        "level": "0",
+                        "position": "0"
+                    },
+                    {
+                        "id": "9",
+                        "module": "3",
+                        "name": "Edit Public User",
+                        "route": "edit",
+                        "in_nav": "",
+                        "form": "3",
+                        "view": null,
+                        "report": null,
+                        "class": "edit",
+                        "level": "0",
+                        "position": "0"
+                    }
+                ],
+                "views": [
+                    {
+                        "id": "3",
+                        "module": "3",
+                        "title": "Public User",
+                        "description": "",
+                        "type": "searchable",
+                        "table": "public_users",
+                        "fields": {
+                            "email": {
+                                "title": "Email",
+                                "parser": "",
+                                "width": 384,
+                                "numeric": false
+                            },
+                            "status": {
+                                "title": "Status",
+                                "parser": "",
+                                "width": 384,
+                                "numeric": false
+                            }
+                        },
+                        "options": [
+
+                        ],
+                        "actions": {
+                            "edit": "on",
+                            "delete": "on"
+                        },
+                        "preview_url": "",
+                        "related_form": null
+                    }
+                ],
+                "forms": [
+                    {
+                        "id": "3",
+                        "module": "3",
+                        "title": "Public User",
+                        "table": "public_users",
+                        "fields": [
+                            {
+                                "title": "Email",
+                                "subtitle": "",
+                                "type": "text",
+                                "options": [
+
+                                ],
+                                "column": "email"
+                            },
+                            {
+                                "title": "Password",
+                                "subtitle": "",
+                                "type": "com.mindscapesolutions.password-field-type*password",
+                                "options": [
+
+                                ],
+                                "column": "password"
+                            },
+                            {
+                                "title": "Deactivated",
+                                "subtitle": "",
+                                "type": "checkbox",
+                                "options": null,
+                                "column": "deactivated"
+                            }
+                        ],
+                        "default_position": "",
+                        "return_view": null,
+                        "return_url": "",
+                        "tagging": "",
+                        "hooks": [
+
+                        ]
+                    }
+                ],
+                "embed_forms": [
+
+                ],
+                "reports": [
+
+                ]
+            }
+        ],
+        "templates": [
+            {
+                "id": "com.mindscapesolutions.public-user*user-login",
+                "name": "User Login",
+                "routed": "",
+                "resources": [
+                    {
+                        "id": "headline",
+                        "title": "Headline",
+                        "subtitle": "",
+                        "type": "text",
+                        "options": [
+
+                        ]
+                    },
+                    {
+                        "id": "subheader",
+                        "title": "Subheader",
+                        "subtitle": "",
+                        "type": "text",
+                        "options": [
+
+                        ]
+                    },
+                    {
+                        "id": "loginButtonLabel",
+                        "title": "Login Button Label",
+                        "subtitle": "",
+                        "type": "text",
+                        "options": null
+                    }
+                ],
+                "module": "0",
+                "level": "0",
+                "position": "0",
+                "extension": "com.mindscapesolutions.public-user"
+            }
+        ],
+        "callouts": [
+
+        ],
+        "settings": [
+            {
+                "id": "com.mindscapesolutions.public-user*com.mindscapesolutions.public-user*public-user-home-page",
+                "value": "http://localhost/bt427/user-home/",
+                "type": "com.fastspot.link-finder-field-type*link-finder",
+                "options": "",
+                "name": "Public User Home Page",
+                "description": "<p>The page the public user will be directed to upon successful login.</p>",
+                "locked": "",
+                "system": "",
+                "encrypted": "",
+                "extension": "com.mindscapesolutions.public-user"
+            }
+        ],
+        "feeds": [
+
+        ],
+        "field_types": [
+            {
+                "id": "com.fastspot.link-finder-field-type*link-finder",
+                "name": "Link Finder",
+                "use_cases": {
+                    "templates": "on",
+                    "modules": "on",
+                    "callouts": "on",
+                    "settings": "on"
+                },
+                "self_draw": null,
+                "extension": "com.fastspot.link-finder-field-type"
+            },
+            {
+                "id": "com.mindscapesolutions.password-field-type*password",
+                "name": "Password",
+                "use_cases": {
+                    "templates": "on",
+                    "modules": "on",
+                    "callouts": "on",
+                    "settings": "on"
+                },
+                "self_draw": null,
+                "extension": "com.mindscapesolutions.password-field-type"
+            }
+        ],
+        "tables": {
+            "public_users": "CREATE TABLE `public_users` (   `id` int(11) NOT NULL AUTO_INCREMENT,   `email` varchar(255) DEFAULT NULL,   `password` varchar(255) DEFAULT NULL,   `deactivated` char(2) DEFAULT NULL,   PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1"
+        }
+    },
+    "sql_revisions": [
+
+    ]
+}
