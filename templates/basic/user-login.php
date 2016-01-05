@@ -25,7 +25,7 @@ if (!empty($subheader)) {
 ?>
 
 <?
-$redirectPage = BigTreeAdmin::getSetting('com.mindscapesolutions.public-user*public-user-home-page')['value'];
+$redirectPage = BigTreeAdmin::getSetting('com.mindscapesolutions.public-user*com.mindscapesolutions.public-user*public-user-home-page')['value'];
 ?>
 
 <input id="public-user-redirect" type="hidden" value="<?= $redirectPage ?>" />
@@ -99,6 +99,7 @@ function login() {
             p: $('#public-user-password').val()
         },
         success: function(result) {
+            console.log(result.length);
             if (result.trim() == 'ok') {
                 addMessage('Login successful');
 
@@ -106,7 +107,7 @@ function login() {
                     window.location = $('#public-user-redirect').val();
                 }
                 else {
-                    window.location = wwwRoot;
+                    window.location = window.location.origin;
                 }
             }
             else {
