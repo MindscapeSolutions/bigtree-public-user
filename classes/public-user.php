@@ -128,7 +128,7 @@
                 $emailBody .= "<p>A new password was requested for " . $creds["email"] . " at " . strtoupper($emailDomain) . ". If you did not request a new password, you may disregard this email.</p>";
                 $emailBody .= "<p>Your reset code is: </p>";
                 $emailBody .= "<p>" . $resetCode . "</p>";
-                $emailBody .= "<p>Enter this code at <a href=\"" . BigTreeAdmin::getSetting("com.mindscapesolutions.public-user*public-user-forgot-password-page")["value"] . "?cde=true\">" . BigTreeAdmin::getSetting("com.mindscapesolutions.public-user*public-user-forgot-password-page")["value"] . "?code=true</a></p>";
+                $emailBody .= "<p>Enter this code at <a href=\"" . BigTreeAdmin::getSetting("com.mindscapesolutions.public-user*public-user-forgot-password-page")["value"] . "?code=true\">" . BigTreeAdmin::getSetting("com.mindscapesolutions.public-user*public-user-forgot-password-page")["value"] . "?code=true</a></p>";
 
                 mail($creds['email'], $emailSubject, $emailBody, $emailHeaders);
 
