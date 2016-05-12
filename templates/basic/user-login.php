@@ -41,6 +41,10 @@ $redirectPage = BigTreeAdmin::getSetting('com.mindscapesolutions.public-user*com
 </fieldset>
 
 <fieldset>
+    <a href="<?= BigTreeAdmin::getSetting("com.mindscapesolutions.public-user*public-user-forgot-password-page")["value"] ?>">Forgot Password?</a>
+</fieldset>
+
+<fieldset>
     <input id="public-user-login" type="button" value="<?= $loginButtonLabel ?>" />
 </fieldset>
 
@@ -99,7 +103,6 @@ function login() {
             p: $('#public-user-password').val()
         },
         success: function(result) {
-            console.log(result.length);
             if (result.trim() == 'ok') {
                 addMessage('Login successful');
 

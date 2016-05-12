@@ -204,6 +204,42 @@
                 "level": "0",
                 "position": "0",
                 "extension": "com.mindscapesolutions.public-user"
+            },
+            {
+                "id": "com.mindscapesolutions.public-user*forgot-password",
+                "name": "Forgot Password",
+                "routed": "",
+                "resources": [
+                    {
+                        "id": "headline",
+                        "title": "Headline",
+                        "subtitle": "",
+                        "type": "text",
+                        "options": [
+
+                        ]
+                    },
+                    {
+                        "id": "subheader",
+                        "title": "Subheader",
+                        "subtitle": "",
+                        "type": "text",
+                        "options": [
+
+                        ]
+                    },
+                    {
+                        "id": "submitButtonLabel",
+                        "title": "Submit Button Label",
+                        "subtitle": "",
+                        "type": "text",
+                        "options": null
+                    }
+                ],
+                "module": "0",
+                "level": "0",
+                "position": "0",
+                "extension": "com.mindscapesolutions.public-user"
             }
         ],
         "callouts": [
@@ -229,6 +265,18 @@
                 "options": "",
                 "name": "Public User Login Page",
                 "description": "<p>The page the public user will log in from.</p>",
+                "locked": "",
+                "system": "",
+                "encrypted": "",
+                "extension": "com.mindscapesolutions.public-user"
+            },
+            {
+                "id": "com.mindscapesolutions.public-user*public-user-forgot-password-page",
+                "value": "",
+                "type": "com.fastspot.link-finder-field-type*link-finder",
+                "options": "",
+                "name": "Public User Forgot Password Page",
+                "description": "",
                 "locked": "",
                 "system": "",
                 "encrypted": "",
@@ -265,7 +313,7 @@
             }
         ],
         "tables": {
-            "public_users": "CREATE TABLE `public_users` (   `id` int(11) NOT NULL AUTO_INCREMENT,   `email` varchar(255) DEFAULT NULL,   `password` varchar(255) DEFAULT NULL,   `deactivated` char(2) DEFAULT NULL,   PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1"
+            "public_users": "CREATE TABLE `public_users` (   `id` int(11) NOT NULL AUTO_INCREMENT,   `email` varchar(255) DEFAULT NULL,   `password` varchar(255) DEFAULT NULL,   `deactivated` char(2) DEFAULT NULL,   `password_reset` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1"
         }
     },
     "sql_revisions": [
