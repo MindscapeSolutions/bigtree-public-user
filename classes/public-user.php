@@ -11,7 +11,7 @@
          */
         public static function generateResetCode($email) {
             $code = base64_encode(date("U"));
-            $result = sqlquery("update public_users set password_reset = '$code'");
+            $result = sqlquery("update public_users set password_reset = '$code' where email = '" . sqlescape($email) . "'");
 
             if (!$result) {
                 return false;
